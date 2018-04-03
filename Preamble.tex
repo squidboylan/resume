@@ -1,0 +1,117 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+    {\setlength{\leftmargin}{#1}}%
+    \item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+    {\setlength{\leftmargin}{-0.5#1}}%
+    \item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+    #1 &
+    #2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+% make resume section formatting
+\newcommand{\makeresumesection}[3]
+{\hrule
+\vspace{-0.4em}
+\subsection*{#1}
+#2
+\vspace{#3}}
+
+\newcommand{\objective}[1]
+{\begin{indentsection}{\parindent}
+  \begin{description*}
+    \item #1
+  \end{description*}
+\end{indentsection}}
+
+\newcommand{\skills}[3]
+{\begin{indentsection}{\parindent}
+  \hyphenpenalty=1000
+  \begin{description*}
+    \item[Proficient Languages:]
+    #1
+    \item[Familiar Languages:]
+    #2
+    \item[System Administration Technologies:]
+    #3
+  \end{description*}
+  \end{indentsection}}
+
+\newcommand{\education}[4]
+{\begin{itemize}
+  \parskip=0.1em
+  \item
+  \headerrow
+    {\textbf{#1}}
+    {\textbf{#2}}
+  \\
+  \headerrow
+    {\emph{#3}}
+    {\emph{#4}}
+\end{itemize}}
+
+\newcommand{\experience}[5]
+{\item
+    \headerrow
+        {\textbf{#1}}
+        {\textbf{#2}}
+    \\
+    \headerrow
+        {\emph{#3}}
+        {\emph{#4}}
+    \begin{itemize*}
+    \item #5
+    \end{itemize*}}
+
+\newcommand{\honors}[3]
+{\item
+  \headerrow
+    {\textbf{#1}}
+    {\textbf{#2}}
+    \\
+    #3}
+
+\newcommand{\projects}[3]
+{\item
+  \headerrow
+    {\textbf{#1}}
+    {\textbf{#2}}
+    \\
+    #3}
+
+\newcommand{\myreference}[4]
+{\item
+\headerrow
+  {\textbf{#1}}
+  {#2}
+\\
+\headerrow
+  {\textbf{#3}}
+  {#4}}

@@ -1,0 +1,78 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\input{Preamble}
+
+% and the actual content starts here
+\begin{document}
+
+\input{Me}
+
+\makeresumesection{Core Technical Skills}{
+    \input{Skills/Generic}
+}{0em}
+
+\makeresumesection{Experience}{
+    \begin{itemize}
+            \parskip=0em
+    {\item
+        \headerrow
+            {\textbf{System Administrator}}
+            {\textbf{Ormuco}}
+        \\
+        \headerrow
+            {\emph{September 2017 -- May 2018}}
+            {\emph{Portland, OR}}
+        \begin{itemize*}
+        \item Automated the deployment of OpenStack public and private clouds using Kolla.
+        \item Designed, maintained, and upgraded multiple Ceph clusters based on client needs.
+        \item Performed storage cluster performance testing in order to decide on QoS limitations.
+        \end{itemize*}}
+    {\item
+        \headerrow
+            {\textbf{Cloud Intern/Developer Advocate Intern}}
+            {\textbf{DreamHost}}
+        \\
+        \headerrow
+            {\emph{August 2015 -- September 2017}}
+            {\emph{Portland, OR}}
+        \begin{itemize*}
+        \item Automated the publication workflow for DreamCompute and DreamObjects documentation using Bash, Python, and Jenkins.
+        \item Updated the DreamHost Forum to run on Discourse while preserving existing data.
+        \item Contributed to several OpenStack projects including Shade, API Site, and OpenStack Manuals.
+        \item Presented “From Upstream Documentation To Downstream Product Knowledge Base” at the 2016 OpenStack Summit in Austin, Texas.
+        \end{itemize*}}
+    {\item
+        \headerrow
+            {\textbf{System Administrator/Tech Support}}
+            {\textbf{The Computer Action Team}}
+        \\
+        \headerrow
+            {\emph{October 2014 -- September 2017}}
+            {\emph{Portland, OR}}
+        \begin{itemize*}
+        \item Administered Linux lab computers, compute servers, Solaris and FreeBSD file servers, package mirrors, web servers, and a 3 node Ganeti cluster as part of the Linux/UNIX team with Ansible, Puppet, and Bash scripts.
+        \item Built and managed a 3 node, 6 OSD Ceph cluster.
+        \item Automated cloud OS image building with Bash, Cron, and Diskimage-builder.
+        \item Trained new junior system administrators on administering Linux and UNIX systems.
+        \end{itemize*}}
+        \end{itemize}
+}{0em}
+
+\makeresumesection{Major Projects}{
+    \begin{itemize}
+            \input{Projects/apt-package-mirror}
+    \end{itemize}
+}{0em}
+
+\makeresumesection{Education}{
+    \input{Education/PortlandState}
+}{0em}
+
+
+\hrule
+\begin{center}
+    {\emph{References Available upon Request}}
+\end{center}
+
+\end{document}
